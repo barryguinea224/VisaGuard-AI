@@ -1,16 +1,14 @@
+# Written Statement on Technology: How We Used IBM Bob and watsonx.ai
 
-# Problem and Solution Statement: VisaGuard AI
+## 1. IBM Bob IDE: Strategic Architecture & Efficiency
+We utilized IBM Bob IDE as our primary development partner to rapidly architect and build our Python/FastAPI backend. Knowing that token efficiency is critical, we adopted a strict constraint-based workflow. We first used Bob's `/plan` mode to outline our Heuristic Validation Engine—specifically defining the "O vs 0" correction logic and our JSON API contracts. Once the plan was locked in, we used `/code` to generate the exact implementation. This strategic prompting allowed us to build the entire backend MVP, complete with CORS middleware, validation logic, and a full `pytest` suite, using only 1.04 Bobcoins (97% of our budget remaining). 
 
-## The Problem
-International travel is often disrupted by minor data entry errors during passport scanning. In West African regions, specifically with Guinean Ordinary Passports, there is a high frequency of "Character Ambiguity" where the letter 'O' and the number '0' are indistinguishable in the Machine Readable Zone (MRZ). This leads to boarding denials, flight delays, and significant financial loss for travelers.
+## 2. IBM Bob Shell: Autonomous Test Repair
+Beyond initial code generation, we leveraged **Bob Shell** directly in our terminal as an autonomous debugging agent. During the final integration phase, our automated `pytest` suite failed because of a nuanced update to our business logic: the Machine Readable Zone (MRZ) cross-check needed to output a "CAUTION" (fixable typo) rather than a hard "STOP" when safely correcting the Guinean passport 'O' to '0'. 
 
-## The Solution: VisaGuard AI
-VisaGuard AI is a specialized verification layer that sits between OCR scanning and airline check-in systems. 
+Instead of manually rewriting the tests, we invoked Bob Shell. Bob autonomously ran the test suite, parsed the error output, understood the new business rule, and self-corrected the assertions in `test_main.py` using the `--yolo` flag. This demonstrated Bob's capability not just as a coding assistant, but as a full-lifecycle engineering partner.
 
-### Key Features:
-1. **Intelligent Heuristic Correction:** A regional logic engine that automatically corrects character ambiguity based on Guinean passport numbering standards.
-2. **watsonx.ai Integration:** Uses high-precision IBM AI to extract entities and validate document authenticity in real-time.
-3. **Frictionless UX:** A simple mobile-first interface built to assist ground staff in identifying errors before they reach the gate.
+## 3. IBM watsonx.ai: Precision Extraction
+To fulfill our vision of a "Digital Gatekeeper," we integrated IBM watsonx.ai into our `POST /extract` pipeline. Standard document scanners often output messy, unstructured raw text. To bridge this gap, we implemented the `ibm-watsonx-ai` Python SDK to call the `meta-llama/llama-3-8b-instruct` foundation model. 
 
-## 🌍 The Impact
-By reducing manual data correction by 85%, VisaGuard AI ensures a smoother travel experience and prevents unnecessary travel bans caused by simple clerical errors.
+Rather than relying on brittle regex to understand complex passenger data, we use the LLM as an intelligent parser. It takes the raw OCR string from a scanned passport or boarding pass and dynamically formats it into a strict, structured JSON payload (Name, Document Number, DOB, Expiry, MRZ). This highly structured data is then fed into our Heuristic Correction Engine, ensuring that VisaGuard AI's decisions are powered by true enterprise AI.
