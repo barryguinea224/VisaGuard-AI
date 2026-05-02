@@ -1,12 +1,12 @@
-# VisaGuard AI 🛡️✈️
+# VisaGuard AI 
 > **Intelligent Travel Document Verification & Regional Heuristic Correction**
 
 Built for the **IBM Bob Dev Day Hackathon (May 2026)**.
 
-## 🚀 The Mission
+## The Mission
 VisaGuard AI prevents boarding denials caused by character ambiguity. Our primary focus is the "O" (letter) vs "0" (zero) confusion common in West African passport numbering (specifically Guinean Ordinary Passports).
 
-## 🧠 Technical Architecture
+## Technical Architecture
 Our solution bridge the gap between raw OCR and travel-ready data:
 1. **Frontend:** React-based UI for document capture.
 2. **Backend:** FastAPI server handling logic and validation.
