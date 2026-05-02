@@ -1,0 +1,7 @@
+[0:00] "For the backend of VisaGuard AI, extreme efficiency was our goal."
+[0:05] "We used IBM Bob IDE's plan and code modes to architect our heuristic engine, consuming only 1.04 Bobcoins."
+[0:15] "When our Pytest suite caught an edge-case logic bug, we fed the error output back into Bob IDE."
+[0:22] "It autonomously analyzed the failure, understood the new business rule, and self-corrected the test assertions for us."
+[0:31] "To power the extraction, we integrated watsonx.ai using the Llama-3 model."
+[0:36] "It takes messy OCR text, and intelligently structures it into JSON for our engine."
+[0:43] "Zero-friction travel, powered by true enterprise AI."
