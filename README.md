@@ -27,5 +27,3 @@ Our solution bridge the gap between raw OCR and travel-ready data:
 
 ---
 *© 2026 VisaGuard AI Team - Developed for IBM Bob Dev Day*
-# VisaGuard-AI
-Travel document verification using IBM watsonx.ai and Bob.
