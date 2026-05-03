@@ -23,7 +23,7 @@ Our solution bridge the gap between raw OCR and travel-ready data:
 - **Beam (@barryguinea224):** Team Lead & Project Architect
 - **Takaomi Ogawa (@Staccate):** Backend & API Development
 - **Musfirah Ihsan (@Musfirahsvg):** UI/UX Design & Presentation
-- **Aayush Vohra (@AAYUSH2512):** QA, Testing & Impact Analysis
+- **Aayush Vohra (@aayushvohra):** QA, Testing & Impact Analysis
 
 ---
 *© 2026 VisaGuard AI Team - Developed for IBM Bob Dev Day*
